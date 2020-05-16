@@ -14,7 +14,7 @@ weatherForm.addEventListener('submit', (event) => {
 	messageOne.textContent = 'Finding ...'
 	messageTwo.textContent = ''
 	
-	fetch("https://wdb-mhirj.run-us-west2.goorm.io/weather?address=" + search.value).then((response) =>{ 
+	fetch("/weather?address=" + search.value).then((response) =>{ 
 		response.json().then((data) => {
 			if(data.error) {
 				messageOne.textContent = data.error;

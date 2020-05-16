@@ -3,6 +3,8 @@ const express = require('express'),
 	  path = require('path'),
 	  hbs = require('hbs');
 
+const port = process.env.PORT || 3000;
+
 const publicDirectoryPath = path.join(__dirname, '../public');
 const viewsPath = path.join(__dirname, '../templates/views');
 const partialPath = path.join(__dirname, "../templates/partials");
@@ -88,6 +90,6 @@ app.get("*", (req, res) => {
 });
 
 
-app.listen(3000, () => {
-	console.log("App has Started");
+app.listen(port, () => {
+	console.log("App has Started on port " + port);
 });
